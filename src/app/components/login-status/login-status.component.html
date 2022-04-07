@@ -1,0 +1,17 @@
+
+
+  <div class="login-status-header">
+
+    <div *ngIf="authService.isAuthenticated() && authService.loggedUser" class="login-status-user-info">
+      Welcome back {{ authService.loggedUser }}!
+    </div>
+
+    <button  *ngIf="!authService.isAuthenticated()" routerLink="/login" class="security-btn">Login</button>
+    <button   *ngIf="authService.isAuthenticated()" (click)="onLogout()" class="security-btn">Logout</button>
+    <button  *ngIf="authService.isAuthenticated()" routerLink="/members" class="security-btn">Member</button>
+    <button *ngIf="authService.isAuthenticated()" routerLink="/order-history" class="security-btn">Orders</button>
+
+  </div>
+
+
+
